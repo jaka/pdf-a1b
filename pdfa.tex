@@ -1,0 +1,37 @@
+
+% apt install texlive-latex-extra texworks texlive-fonts-recommended texlive-fonts-extra texlive-lang-european texlive-science
+
+\begin{filecontents}{\jobname.xmpdata}
+\Title{Title}
+\Author{Author}
+\Subject{Subject}
+\Producer{jaka}
+\Creator{Creator}
+\end{filecontents}
+
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+
+\usepackage[a-1b]{pdfx}
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+
+\makeatletter
+\pdfx@topdfstring\pdfx@Author\xmp@Author
+\makeatother
+
+\begin{document}
+
+\LaTeX \quad PDF/A-1b \\[2cm]
+
+\makeatletter
+Author: \pdfx@Author
+
+Subject: \pdfx@Subject
+
+Title: \pdfx@Title
+\makeatother
+
+\end{document}
